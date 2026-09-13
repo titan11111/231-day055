@@ -1,18 +1,87 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
-  <title>SKY REIGN</title>
-  <meta http-equiv="refresh" content="0;url=soten-dive.html">
-    <meta property="og:title" content="SKY REIGN">
-    <meta property="og:description" content="スマホ・PCのブラウザで遊べる無料ゲームです。インストール不要！">
-    <meta property="og:url" content="https://titan11111.github.io/GitHub-game/231-sky-reign/">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<title>SKY REIGN 〜蒼穹の覇者〜</title>
+<meta property="og:title" content="SKY REIGN 〜蒼穹の覇者〜">
+<meta property="og:description" content="スマホ・PCのブラウザで遊べる無料ゲームです。インストール不要！">
+<meta property="og:url" content="https://titan11111.github.io/231-day055/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <p>Loading SKY REIGN…</p>
-  <script>location.replace('soten-dive.html');</script>
+<div id="safe-area-probe" aria-hidden="true"></div>
+<div id="game-shell">
+  <div id="game-stage">
+    <div id="screen-wrap">
+      <div class="veil" id="title">
+        <div class="drift" aria-hidden="true">
+          <svg class="drift-bird d1" viewBox="0 0 64 26"><path d="M2 21C13 4 24 3 32 15 40 3 51 4 62 21 49 12 39 13 32 22 25 13 15 12 2 21Z"/></svg>
+          <svg class="drift-bird d2" viewBox="0 0 64 26"><path d="M2 21C13 4 24 3 32 15 40 3 51 4 62 21 49 12 39 13 32 22 25 13 15 12 2 21Z"/></svg>
+          <svg class="drift-bird d3" viewBox="0 0 64 26"><path d="M2 21C13 4 24 3 32 15 40 3 51 4 62 21 49 12 39 13 32 22 25 13 15 12 2 21Z"/></svg>
+          <svg class="drift-bird d4" viewBox="0 0 64 26"><path d="M2 21C13 4 24 3 32 15 40 3 51 4 62 21 49 12 39 13 32 22 25 13 15 12 2 21Z"/></svg>
+        </div>
+        <div class="frame" aria-hidden="true"></div>
+        <div class="title-card">
+          <p class="kicker" aria-hidden="true"><i></i><span>田園上空 1,200m</span><i></i></p>
+          <div class="crest" aria-hidden="true">
+            <i class="rule"></i>
+            <svg class="crest-mark" viewBox="0 0 72 26"><path d="M4 22C16 3 27 2 36 14 45 2 56 3 68 22 53 11 43 12 36 23 29 12 19 11 4 22Z"/></svg>
+            <i class="rule"></i>
+          </div>
+          <h1><span class="en">SKY REIGN</span><small>蒼穹の覇者</small></h1>
+          <p class="lead">稲穂の海が、風でひとつに揺れる。<br>その上を渡れるのは、鷹だけだ。</p>
+          <button type="button" class="game-btn" id="startBtn">空へ出る</button>
+          <p class="best-line"><span>最高記録</span><b id="titleBest">0</b></p>
+        </div>
+      </div>
+      <div class="veil hide" id="over">
+        <div class="drift" aria-hidden="true">
+          <svg class="drift-bird d2" viewBox="0 0 64 26"><path d="M2 21C13 4 24 3 32 15 40 3 51 4 62 21 49 12 39 13 32 22 25 13 15 12 2 21Z"/></svg>
+          <svg class="drift-bird d3" viewBox="0 0 64 26"><path d="M2 21C13 4 24 3 32 15 40 3 51 4 62 21 49 12 39 13 32 22 25 13 15 12 2 21Z"/></svg>
+          <svg class="drift-bird d4" viewBox="0 0 64 26"><path d="M2 21C13 4 24 3 32 15 40 3 51 4 62 21 49 12 39 13 32 22 25 13 15 12 2 21Z"/></svg>
+        </div>
+        <div class="frame" aria-hidden="true"></div>
+        <div class="result-card">
+          <p class="kicker"><i></i><span id="overKicker">日暮れ・帰巣</span><i></i></p>
+          <h1 id="overTitle">狩り終了</h1>
+          <p class="verse" id="overVerse">遠い山の端が赤い。明日、また同じ空へ。</p>
+          <div class="score-block">
+            <span class="score-label">総得点</span>
+            <div class="big" id="finalScore">0</div>
+          </div>
+          <div class="row">
+            <div>捕獲<b id="finalCatch">0</b></div>
+            <div>最大コンボ<b id="finalCombo">0</b></div>
+            <div>最高記録<b id="bestScore">0</b></div>
+          </div>
+          <button type="button" class="game-btn" id="againBtn">もう一度、空へ</button>
+        </div>
+      </div>
+      <div class="veil hide" id="paused">
+        <div class="frame" aria-hidden="true"></div>
+        <h1>一時停止</h1>
+        <p class="lead">下の ▶ でも戻れます。</p>
+        <button type="button" class="game-btn" id="resumeBtn">再開する</button>
+      </div>
+      <canvas id="c" data-logical-width="390" data-logical-height="633"></canvas>
+    </div>
+  </div>
+  <div id="control-deck" aria-label="操作盤">
+    <div class="deck-tools">
+      <button type="button" class="icon-btn" id="mute" aria-label="音のオン・オフ">🔊</button>
+      <button type="button" class="icon-btn" id="pauseBtn" aria-label="一時停止">⏸</button>
+    </div>
+    <div class="deck-note"><b>操作盤</b><br>押しっぱで急降下。画面は狙い。</div>
+    <button type="button" id="btnDive" aria-label="急降下">急降下<small>HOLD</small></button>
+  </div>
+</div>
+<audio id="bgmTitle" src="audio/open-sky.m4a" loop preload="none" playsinline webkit-playsinline></audio>
+<audio id="bgmPlay" src="audio/soaring-horizons.m4a" loop preload="none" playsinline webkit-playsinline></audio>
+
+<script src="script.js"></script>
+
 </body>
 </html>

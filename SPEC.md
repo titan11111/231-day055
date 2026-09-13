@@ -9,7 +9,7 @@
 | 項目 | 内容 |
 |---|---|
 | ジャンル | 見下ろし型 ダイブアクション（1本指・90秒スコアアタック） |
-| 構成 | `index.html` → `soten-dive.html` ＋ `style.css` ＋ `script.js`。BGMは `audio/*.m4a` |
+| 構成 | `index.html` ＋ `style.css` ＋ `script.js`。BGMは `audio/*.m4a` |
 | サイズ | 公開実体 約5.3MB（20MB鉄則の27%。元MP3 2本計10MBを AAC-LC 96kbps へ圧縮） |
 | 画面 | iOS 75/25シェル（`#game-shell` / `#game-stage` 75% / `#control-deck` 25%）。Canvas は上段のみ（DPR最大2） |
 | 音 | BGM 2曲＋ WebAudio SE。ミュートは操作盤。`localStorage` 保存 |
@@ -95,8 +95,7 @@
 
 ## ファイル構成
 
-- `index.html` — `soten-dive.html` へリダイレクト
-- `soten-dive.html` — マークアップ
+- `index.html` — マークアップ（Pages入口兼本体）
 - `style.css` / `script.js` — 見た目と本体
 - `audio/open-sky.m4a` — タイトル／リザルト BGM
 - `audio/soaring-horizons.m4a` — プレイ中 BGM
