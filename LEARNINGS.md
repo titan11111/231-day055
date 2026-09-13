@@ -2,10 +2,11 @@
 
 ## 2026-09-13 入口を index.html に一本化して GitHub を更新
 
-`soten-dive.html` へ逃がす構成は、入口ファイルが消えると Pages が 404 になる。本体を `index.html` に置いて一本化した。公開先リポジトリ名は既存の `231-day055`（フォルダ名 `231-sky-reign` のリポジトリは未作成）。
+`soten-dive.html` へ逃がす構成は、入口ファイルが消えると Pages が 404 になる。本体を `index.html` に置いて一本化した。
 
 - セーブキーは `soten-dive-best` / `soten-dive-muted` のまま（衝突回避より既存記録の維持を優先）
-- og:url は実在する `https://titan11111.github.io/231-day055/` を使う
+- 公開リポジトリはフォルダ名どおり `231-sky-reign`。旧 `231-day055` も残す
+- og:url は `https://titan11111.github.io/231-sky-reign/`
 - harness: `docs/harness-reports/231-sky-reign-2026-09-13T10-29-13-183Z.md` → **PASS**（通信量 2.70MB・操作盤 25.0%・コンソールエラー0）
 
 ## 2026-09-13 タイトルとエンディングを「同じ世界の朝と夕」で作る
